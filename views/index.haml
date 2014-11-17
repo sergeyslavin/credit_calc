@@ -1,0 +1,19 @@
+!!!html
+%html
+	%head
+		%title Creadit Calculator
+		%script{type:"text/javascript", src:"js/jquery-2.1.1.min.js"}
+	%body
+		%h1
+			%form{action:"/calc", method: "post", id:"calc_form"}
+				%p
+					Total Amount:
+					%input{type:"text", name:"calc[total_amount]"}
+				%p
+					Period Number:
+					%input{type:"text", name:"calc[period_number]"}
+				%p
+					Percent(%)
+					%input{type:"text", name:"calc[percent]"}
+				%p
+					%input{type:"submit", value:"Calculate"}
