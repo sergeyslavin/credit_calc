@@ -5,16 +5,22 @@
 		%script{type:"text/javascript", src:"js/jquery-2.1.1.min.js"}
 		%script{type:"text/javascript", src:"js/main.script.js"}
 	%body
-		%h1
-			%form{action:"/calc", method: "post", id:"calc_form"}
-				%p
-					Total Amount:
-					%input{type:"text", name:"total_amount"}
-				%p
-					Period Number:
-					%input{type:"text", name:"period_number"}
-				%p
-					Percent(%)
-					%input{type:"text", name:"percent"}
-				%p
-					%input{type:"submit", value:"Calculate"}
+		%form{action:"/calc", method: "post", id:"calc_form"}
+			%p
+				Total Amount:
+				%input{type:"text", name:"total_amount"}
+			%p
+				Period Number:
+				%input{type:"text", name:"period_number"}
+			%p
+				Percent(%)
+				%input{type:"text", name:"percent"}
+			%p
+				Type:
+				%br/
+				%label Differentiated
+				%input{type:"radio", name:"calc_type", value:"differentiated", checked:"checked"}
+				%label Annuity
+				%input{type:"radio", name:"calc_type", value:"annuity"}
+			%p
+				%input{type:"submit", value:"Calculate"}
