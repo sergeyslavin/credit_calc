@@ -1,26 +1,36 @@
 !!!html
 %html
 	%head
-		%title Creadit Calculator
+		%title Credit Calculator
 		%script{type:"text/javascript", src:"js/jquery-2.1.1.min.js"}
 		%script{type:"text/javascript", src:"js/main.script.js"}
+		%link{rel:"stylesheet", href:"css/main.style.css"}
 	%body
-		%form{action:"/calc", method: "post", id:"calc_form"}
-			%p
-				Total Amount:
-				%input{type:"text", name:"total_amount"}
-			%p
-				Period Number:
-				%input{type:"text", name:"period_number"}
-			%p
-				Percent(%)
-				%input{type:"text", name:"percent"}
-			%p
-				Type:
-				%br/
-				%label Differentiated
-				%input{type:"radio", name:"calc_type", value:"differentiated", checked:"checked"}
-				%label Annuity
-				%input{type:"radio", name:"calc_type", value:"annuity"}
-			%p
-				%input{type:"submit", value:"Calculate"}
+
+		.form_div
+			#message
+			%form{action:"/calc", method: "post", id:"calc_form"}
+				%table.input_field_table
+					%tr
+						%td Total Amount:
+						%td
+							%input{type:"text", name:"total_amount", value:"1000.0"}
+					%tr
+						%td Period Number:
+						%td
+							%input{type:"text", name:"period_number", value: "12"}
+					%tr
+						%td Percent(%)
+						%td
+							%input{type:"text", name:"percent", value:"20"}
+					%tr
+						%td Type:
+						%td
+							%label Differentiated
+							%input{type:"radio", name:"calc_type", value:"differentiated", checked:"checked"}
+							%label Annuity
+							%input{type:"radio", name:"calc_type", value:"annuity"}
+					%tr
+						%td
+							%input{type:"submit", value:"Calculate"}
+		%table#reponse_table.reponse_table_s

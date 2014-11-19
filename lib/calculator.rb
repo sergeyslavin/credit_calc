@@ -5,7 +5,7 @@ class Float
 end
 
 class Calculator
-	
+
 	attr_accessor :credit_percent, :credit_sum, :credit_term
 
 	def initializer
@@ -35,8 +35,8 @@ class Calculator
 	def result
 		raise 'Please, specify type before!' if self.type.nil?
 
-		if type.eql? "differentiated"
-			self.differentiated
+	if type.eql? "differentiated"
+		self.differentiated
 		else
 			self.annuity
 		end
@@ -46,26 +46,26 @@ class Calculator
 		table_of_result_value = []
 
 		rest_of_credit_sum = self.credit_sum
-		
+
 		1.upto(self.credit_term.to_i) do |month|
 
 			percent = ((self.credit_percent / 12) / 100)
 
 			accrued_percent = self.credit_percent / 100.0
 
-			accrued_interest = rest_of_credit_sum / self.credit_term * accrued_percent	
+			accrued_interest = rest_of_credit_sum / self.credit_term * accrued_percent
 
 			main_debt = self.credit_sum * percent / (1 - 1 / (1 + percent) ** self.credit_term)
-			
+
 			payment_sum = main_debt - accrued_interest
 
 			rest_of_credit_sum -= payment_sum
 
-			table_of_result_value << { payment: payment_sum.round_and_truncate, 
-												percent: accrued_interest.round_and_truncate,
-												rest: rest_of_credit_sum.round_and_truncate,
-												main_debt: main_debt.round_and_truncate,
-												month: month }
+			table_of_result_value << { payment: payment_sum.round_and_truncate,
+																percent: accrued_interest.round_and_truncate,
+																rest: rest_of_credit_sum.round_and_truncate,
+																main_debt: main_debt.round_and_truncate,
+																month: month }
 		end
 
 		table_of_result_value
@@ -91,11 +91,11 @@ class Calculator
 
 			rest_of_credit_sum -= payment_sum
 
-			table_of_result_value << { payment: payment_sum.round_and_truncate, 
-												percent: accrued_interest.round_and_truncate,
-												rest: rest_of_credit_sum.round_and_truncate,
-												main_debt: main_debt.round_and_truncate,
-												month: month }
+			table_of_result_value << { payment: payment_sum.round_and_truncate,
+																percent: accrued_interest.round_and_truncate,
+																rest: rest_of_credit_sum.round_and_truncate,
+																main_debt: main_debt.round_and_truncate,
+																month: month }
 		end
 
 		table_of_result_value

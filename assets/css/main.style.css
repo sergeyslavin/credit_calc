@@ -1,12 +1,45 @@
-body {
-  background-color: #F70010;
+input[type="text"] {
+  width: 140px;
+  height: 20px;
+}
+.form_div {
+  display: table;
+  margin: 0 auto;
 }
 
-h1.logo { margin-left: 40px; }
-ul.navigation { float: left; display: block; width: 200px;}
-ul.navigation li { padding-top: 20px; list-style-type: none; color: #F2E6E6; font-family: sans-serif; font-size: 17px; font-weight: bold;}
-ul.navigation li:hover { padding-left: 20px;cursor: pointer; };
-.container { width: 800px; height: auto;}
-.container img {margin-left: 100px; border: 2px #B6DEE0 solid;}
+#message {
+  margin-bottom: 40px;
+}
 
-#rock{ display: block; width: 80px; height: 30px; position: absolute; margin-left: 780px; margin-top: 100px; }
+table.reponse_table_s {
+  margin: 0 auto;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table.reponse_table_s, table.reponse_table_s th, table.reponse_table_s td {
+  border: 1px solid black;
+}
+
+input[type="submit"] {
+  width: 120px;
+  height: 30px;
+  background: #006699;
+  color: #fff;
+  font-family: sans-serif;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.success {
+  color: green;
+}
+
+.error {
+  color: red;
+}
+.input_field_table {
+  border: none;
+  width: 400px;
+}
