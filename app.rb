@@ -35,7 +35,6 @@ post '/calc' do
 	}
 
 	result = calc.result
-	p result
 
 	unless result.nil?
 		{status: 200, message: "Success!", data: result, method_type: type}.to_json
