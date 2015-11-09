@@ -11,7 +11,6 @@ get '/' do
 end
 
 post '/calc' do
-
 	content_type :json
 
 	if params[:total_amount].empty? or params[:period_number].empty? or params[:percent].empty?
@@ -41,5 +40,4 @@ post '/calc' do
 	else
 		{status: 400, message: "Error!", data: nil}.to_json
 	end
-
 end
